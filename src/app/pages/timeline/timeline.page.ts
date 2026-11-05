@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 // Nível: Médio | Responsável: Vinícius.
-// TODO: criar avisos fictícios com id, título, texto e prioridade.
-// Orientação: importe ResumoAvisoPipe e DestaqueAvisoDirective após implementá-los.
-// No HTML, renderize os avisos com @for e use o id no track.
+// Tarefa: montar a Timeline com @for, um pipe e uma diretiva personalizados.
+// Orientação: use o pipe para resumir avisos e a diretiva para destacar os prioritários.
 @Component({
   selector: 'app-timeline',
   standalone: true,

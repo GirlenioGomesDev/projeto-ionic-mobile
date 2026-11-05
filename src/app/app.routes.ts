@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-// Nível: Fácil | Responsável pela navegação principal: Emanuele.
-// Orientação: mantenha os caminhos das cinco abas alinhados aos botões da barra inferior.
+// Nível: Fácil | Responsável: Emanuele.
+// Orientação: mantenha os caminhos das abas alinhados aos botões da barra inferior.
 export const routes: Routes = [
   {
     path: '',
@@ -19,23 +19,9 @@ export const routes: Routes = [
       },
       {
         path: 'treinos',
-        children: [
-          {
-            path: '',
-            pathMatch: 'full',
-            loadComponent: () =>
-              import('./pages/treinos/treinos.page').then((m) => m.TreinosPage),
-          },
-          {
-            // TODO | Nível: Difícil | Responsável: Gabriel.
-            // Tarefa: trocar esta rota de demonstração por :id.
-            // Orientação: combine a mudança com Leno, que mantém o link na lista.
-            path: 'detalhes',
-            loadComponent: () =>
-              import('./pages/detalhes/detalhes.page').then((m) => m.DetalhesPage),
-          },
-        ],
+        loadComponent: () => import('./pages/treinos/treinos.page').then((m) => m.TreinosPage),
       },
+      // TODO | Difícil | Gabriel: adicione a rota de Detalhes com um parâmetro de ID.
       {
         path: 'grade',
         loadComponent: () => import('./pages/grade/grade.page').then((m) => m.GradePage),

@@ -1,16 +1,7 @@
-import { Injectable } from '@angular/core';
-
 // Nível: Difícil | Responsável: Leno.
-// TODO: implementar os três GETs da API pública wger com HttpClient.
-// Orientação: use https://wger.de/api/v2 como base. Combine com Gabriel
-// o nome e o tipo de buscarExercicio(id) para a integração com Detalhes.
-@Injectable({ providedIn: 'root' })
-export class ExerciciosApiService {
-  // listarExercicios() → GET /exerciseinfo/?limit=12
-  // buscarExercicio(id) → GET /exerciseinfo/{id}/
-  // listarCategorias() → GET /exercisecategory/
-  //
-  // Modele os campos usados na tela. As listas retornam um objeto com results.
-  // Em translations, procure o nome em português (language 7), depois em
-  // inglês (language 2). Trate exercícios sem tradução para esses idiomas.
-}
+// Tarefa: criar aqui o service de Treinos depois que o grupo escolher a API.
+//
+// 1. Confira na documentação da API quais três consultas GET o app vai usar.
+// 2. Registre o provedor HTTP do Angular em src/app/app.config.ts.
+// 3. Crie neste arquivo um service injetável que usa HttpClient, com um método por consulta.
+// 4. Use o service em src/app/pages/treinos/treinos.page.ts para preencher a lista.
