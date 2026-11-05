@@ -1,0 +1,31 @@
+/*
+ * Nível: Fácil | Responsável: Emanuele.
+ * Tarefa: refinar a barra inferior e a indicação da aba ativa.
+ * Orientação: verifique contraste e espaço para os cinco rótulos no celular.
+ */
+ion-tab-bar {
+  --background: var(--app-surface);
+  --border: 1px solid var(--app-line);
+  min-height: 64px;
+}
+
+ion-tab-button {
+  --background: transparent;
+  --color: var(--app-ink);
+  --color-selected: var(--ion-color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+ion-tab-button ion-icon {
+  width: 22px;
+  height: 22px;
+  padding: 4px 10px;
+  box-sizing: content-box;
+  border-radius: 999px;
+}
+
+ion-tab-button.tab-selected ion-icon {
+  color: var(--ion-color-primary-contrast);
+  background: var(--ion-color-primary);
+}

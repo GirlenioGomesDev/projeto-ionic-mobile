@@ -1,0 +1,77 @@
+@import '@ionic/angular/css/core.css';
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+
+/*
+ * Nível: Fácil | Responsável pelo tema compartilhado: Emanuele.
+ * Tarefa: ajustar a identidade do Ritmo Fit e revisar o contraste.
+ * Orientação: mantenha as cores e os componentes comuns aqui. Estilos exclusivos
+ * de uma tela podem ficar em um CSS junto da página, com o nome do responsável.
+ */
+:root {
+  color-scheme: light;
+  --app-bg: #f8f7f6;
+  --app-surface: #eeedeb;
+  --app-line: #dedbd8;
+  --app-ink: #201e1d;
+  --app-muted: #56514e;
+
+  --ion-color-primary: #bb2822;
+  --ion-color-primary-rgb: 187, 40, 34;
+  --ion-color-primary-contrast: #fff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #a5231e;
+  --ion-color-primary-tint: #c23e38;
+  --ion-background-color: var(--app-bg);
+  --ion-text-color: var(--app-ink);
+}
+
+ion-toolbar {
+  --background: var(--app-bg);
+  --min-height: 64px;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.page-body {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+.surface-card {
+  margin-bottom: 16px;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--app-surface);
+}
+
+.surface-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.16rem;
+  font-weight: 750;
+}
+
+.surface-card p {
+  margin: 0;
+  line-height: 1.45;
+  color: var(--app-muted);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.surface-card .eyebrow {
+  margin-bottom: 8px;
+  color: var(--ion-color-primary);
+}

@@ -1,0 +1,45 @@
+/*
+ * Nível: Fácil | Responsável: Bianka.
+ * Tarefa: completar os estilos do banner e dos atalhos.
+ * Orientação: teste os textos e cartões em uma janela do tamanho de um celular.
+ */
+.hero {
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.65rem, 5vw, 2.2rem);
+  font-weight: 800;
+}
+
+.hero p:last-child {
+  margin: 0;
+}
+
+.atalhos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.atalhos a {
+  display: grid;
+  min-height: 52px;
+  place-items: center;
+  padding: 8px 4px;
+  border-radius: 12px;
+  background: var(--app-surface);
+  color: var(--app-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.atalhos a:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,25 @@
+<!--
+  Nível: Difícil | Responsável: Leno.
+  Tarefa: exibir exercícios e categorias retornados pela wger.
+  Orientação: troque o cartão ilustrativo pela lista. Na integração com Gabriel,
+  faça cada link enviar o id real do exercício para /treinos/:id.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Treinos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="page-body">
+    <section class="surface-card">
+      <p class="eyebrow">Catálogo de exercícios</p>
+      <h2>Lista de treinos</h2>
+      <p>Os exercícios da academia aparecem aqui.</p>
+    </section>
+
+    <ion-button routerLink="/treinos/detalhes" expand="block" fill="outline">
+      Abrir tela de detalhes
+    </ion-button>
+  </main>
+</ion-content>
