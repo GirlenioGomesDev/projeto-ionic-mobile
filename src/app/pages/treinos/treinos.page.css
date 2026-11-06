@@ -1,0 +1,24 @@
+
+/* Nível: Difícil | Responsável: Leno */
+
+/* Melhoria visual dos cards de exercícios */
+.treino-card {
+  margin-bottom: 12px;
+  border: 1px solid var(--app-line);
+  border-radius: 14px;
+}
+
+/* Organização do título do exercício */
+.treino-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* Espaçamento das informações */
+.treino-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 6px 0;
+}

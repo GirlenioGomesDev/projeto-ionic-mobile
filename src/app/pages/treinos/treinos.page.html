@@ -1,4 +1,6 @@
-<!-- Difícil | Leno | Monte aqui a lista de treinos e o link de cada item para Detalhes. -->
+
+<!-- Nível: Difícil | Responsável: Leno -->
+
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Treinos</ion-title>
@@ -7,6 +9,93 @@
 
 <ion-content>
   <main class="page-body">
-    <p class="surface-card">Lista de treinos</p>
+
+    <h2>Biblioteca de Exercícios</h2>
+    <p>Confira os exercícios disponíveis.</p>
+
+    <!-- Pesquisa de exercícios -->
+    <ion-searchbar
+      placeholder="Pesquisar exercício"
+      [debounce]="200"
+      (ionInput)="atualizarBusca($event.detail.value)">
+    </ion-searchbar>
+
+    <!-- Mensagem de carregamento -->
+    @if (carregando) {
+
+      <p class="surface-card">
+        Carregando exercícios...
+      </p>
+
+    } @else if (erro) {
+
+      <!-- Mensagem caso a API falhe -->
+      <p class="surface-card">
+        {{ erro }}
+      </p>
+
+    } @else if (treinosFiltrados.length === 0) {
+
+      <!-- Mensagem caso não existam resultados -->
+      <p class="surface-card">
+        Nenhum exercício encontrado.
+      </p>
+
+    } @else {
+
+      <!-- Lista de exercícios -->
+      @for (treino of treinosFiltrados; track treino.id) {
+
+        <article class="surface-card treino-card">
+
+          <h3>{{ treino.nome }}</h3>
+
+          <p>
+            <strong>Músculos:</strong>
+            {{ treino.musculos }}
+          </p>
+
+          <p>
+            <strong>Equipamentos:</strong>
+            {{ treino.equipamentos }}
+          </p>
+
+        </article>
+
+      }
+
+      <!-- Paginação: fora do @for -->
+      @if (totalPaginas > 1) {
+
+        <div style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+          margin: 20px 0;
+        ">
+
+          <ion-button
+            [disabled]="paginaAtual === 1 || carregando"
+            (click)="paginaAnterior()">
+            Anterior
+          </ion-button>
+
+          <span>
+            Página {{ paginaAtual }} de {{ totalPaginas }}
+          </span>
+
+          <ion-button
+            [disabled]="paginaAtual >= totalPaginas || carregando"
+            (click)="proximaPagina()">
+            Próxima
+          </ion-button>
+
+        </div>
+
+      }
+
+    }
+
   </main>
 </ion-content>
