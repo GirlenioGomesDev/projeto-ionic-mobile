@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/grade"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Detalhes da aula</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="page-body">
+    @if (aula; as item) {
+      <section class="surface-card">
+        <h2>{{ item.nome }}</h2>
+
+        <p>
+          <strong>Dias:</strong>
+          {{ diasDaAula }}
+        </p>
+
+        <p>
+          <strong>Horário:</strong>
+          {{ item.inicio }} às {{ item.fim }}
+        </p>
+
+        <p>
+          <strong>Local:</strong>
+          {{ item.local }}
+        </p>
+
+        <p>{{ item.descricao }}</p>
+      </section>
+    } @else {
+      <section class="surface-card">
+        <h2>Aula não encontrada</h2>
+
+        <p>
+          Não existe uma aula cadastrada com esse ID.
+          Use o botão Voltar para consultar a grade.
+        </p>
+      </section>
+    }
+  </main>
+</ion-content>

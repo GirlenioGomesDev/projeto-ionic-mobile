@@ -23,6 +23,11 @@ export const routes: Routes = [
       },
       // TODO | Difícil | Gabriel: adicione a rota de Detalhes com um parâmetro de ID.
       {
+        path: 'grade/detalhes/:id',
+        loadComponent: () =>
+          import('./pages/detalhes/detalhes.page').then((m) => m.DetalhesPage),
+      },
+      {
         path: 'grade',
         loadComponent: () => import('./pages/grade/grade.page').then((m) => m.GradePage),
       },

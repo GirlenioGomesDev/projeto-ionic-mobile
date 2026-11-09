@@ -1,4 +1,3 @@
-<!-- Difícil | Gabriel | Organize aqui os horários e as aulas salvas na agenda. -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Grade</ion-title>
@@ -7,6 +6,62 @@
 
 <ion-content>
   <main class="page-body">
-    <p class="surface-card">Horários da academia</p>
+    <h2>Horários da academia</h2>
+
+    <ion-list>
+      <ion-item>
+        <ion-select
+          label="Dia da semana"
+          interface="alert"
+          cancelText="Cancelar"
+          okText="Selecionar"
+          [value]="diaSelecionado"
+          (ionChange)="selecionarDia($event.detail.value)"
+        >
+          @for (dia of dias; track dia.numero) {
+            <ion-select-option [value]="dia.numero">
+              {{ dia.nome }}
+            </ion-select-option>
+          }
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    @if (funcionamento; as dia) {
+      <section class="surface-card">
+        <h3>{{ dia.nome }}</h3>
+
+        <p>
+          Funcionamento: {{ dia.abertura }} às {{ dia.fechamento }}
+        </p>
+      </section>
+    }
+
+    <h2>Aulas do dia</h2>
+
+    <ion-list>
+      @for (aula of aulas; track aula.id) {
+        <ion-item
+          [button]="true"
+          [detail]="true"
+          [routerLink]="['/grade/detalhes', aula.id]"
+        >
+          <ion-label>
+            <h3>{{ aula.nome }}</h3>
+
+            <p>{{ aula.inicio }} às {{ aula.fim }}</p>
+
+            <p>{{ aula.local }}</p>
+          </ion-label>
+        </ion-item>
+      } @empty {
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            Não há aulas coletivas cadastradas para este dia.
+            A academia funciona no horário informado acima.
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
   </main>
 </ion-content>
